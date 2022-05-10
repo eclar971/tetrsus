@@ -46,9 +46,9 @@ function play() {
   board.piece = piece;
   board.piece.draw();
   console.table(board.grid);
-  counter = 1000
+  counter = 500 / (account.level + 1)
   var myFunction = function () {
-    counter = 1000;
+    counter = 500 / (account.level + 1);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     board.drawBoard();
 
@@ -71,7 +71,13 @@ function play() {
       piece.draw();
       board.piece = piece;
       board.piece.draw();
-      ///board.isFull()
+      if (board.isFull()){
+        account.level = 0
+        account.lines = 0
+        account.score = 0
+        alert("Game Over restarting")
+        return(play())
+      }
       console.table(board.grid);
     }
     setTimeout(myFunction, counter);

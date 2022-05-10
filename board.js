@@ -64,10 +64,13 @@ class Board {
       : 0;
   }
   isFull() {
-    full = false;
-    this.gird[0].forEach((items) => {
-       
+    var full = false;
+    this.grid[0].forEach((items) => {
+       if (items != 0){
+         full = true
+       }
     })
+    return(full)
   }
   valid(p) {
     return p.shape.every((row, dy) => {
