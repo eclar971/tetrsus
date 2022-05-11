@@ -124,8 +124,11 @@ class Board {
       row.forEach((value, x) => {
         if (value > 0) {
           this.piece.ctx.fillStyle = COLORS[value - 1];
+          this.piece.ctx.globalAlpha = .6
           this.piece.ctx.fillRect(x, y, 1, 1);
-        }
+          this.piece.ctx.globalAlpha = 1
+          this.piece.ctx.fillRect(x + .1, y + .1, .8, .8);
+        } 
       });
     });
   }

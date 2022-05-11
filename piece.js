@@ -21,7 +21,10 @@ class Piece {
         // x, y gives the position of the block in the shape
         // this.x + x is then the position of the block on the board
         if (value > 0) {
+          this.ctx.globalAlpha = .6
           this.ctx.fillRect(this.x + x, this.y + y, 1, 1);
+          this.ctx.globalAlpha = 1
+          this.ctx.fillRect(this.x + x + .1, this.y + y + .1, .8, .8);
         }
       });
     });
