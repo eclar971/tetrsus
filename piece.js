@@ -6,7 +6,8 @@ class Piece {
     const typeId = this.randomizeTetrominoType(COLORS.length);
     this.ctx = ctx;
     this.shape = SHAPES[typeId];
-    this.color = COLORS[SHAPES[typeId][0][1] - 1];
+    let shapeNum = [].concat(...this.shape).filter(item => item !== 0)[0]
+    this.color = COLORS[shapeNum - 1];
     
 
     this.x = 3;
