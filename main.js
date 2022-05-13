@@ -44,7 +44,6 @@ function play() {
   board.reset();
   piece = new Piece(ctx);
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-  piece.draw();
   board.piece = piece;
   board.piece.draw();
   console.table(board.grid);
@@ -66,11 +65,11 @@ function play() {
 
       board.piece.draw();
     } else {
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       board.freeze();
       board.clearLines();
-      board.draw();
+      board.drawBoard();
       let piece = new Piece(ctx);
-      piece.draw();
       board.piece = piece;
       board.piece.draw();
       if (board.isFull()){

@@ -132,8 +132,4 @@ class Board {
       });
     });
   }
-  draw() {
-    this.piece.draw();
-    this.drawBoard();
-  }
 }
